@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700');
+
+$header: 100px;
+
+$joyspiration: #ED184C;
+
+.background {
+  background-image: url('../img/subtle_dots.png');
+  min-height: 100vh;
+}
+
+.header {
+  height: $header;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  line-height: $header;
+  position: fixed;
+  top: 0;
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 35%;
+    transition: height 0.6s;
+    cursor: pointer;
+  }
+
+  img:hover {
+    height: 40%;
+  }
+}
+
+.container {
+  margin-top: $header + 50px;
+}

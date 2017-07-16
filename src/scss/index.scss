@@ -78,7 +78,7 @@ $grey: #CACACA;
     position: absolute;
     height: 80%;
     left: 20px;
-    top: 47%;
+    top: 45%;
     transform: translateY(-50%);
     cursor: pointer;
 
@@ -163,12 +163,20 @@ $grey: #CACACA;
 @media(max-width: 600px){
   .header {
     .logo {
-      font-size: 2.8rem;
+      font-size: 2rem;
+    }
+
+    .bitmoji {
+      height: 60%;
+      left: 10px;
+    }
+
+    .sublogo {
+      display: none;
     }
 
     .insta {
-      height: 26%;
-      display: none;
+      height: 30%;
     }
   }
   .post {

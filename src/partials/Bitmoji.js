@@ -21,16 +21,62 @@ export default class Bitmoji extends Component {
     }
   }
 
-  setEmotion(emotion, callback){
+  componentDidMount(){
+    this.neutral();
+  }
+
+  neutral(waitTime){
+    const self = this;
+    setTimeout(function(){
+      if (self.state.currentEmotion !== 'yaas'){
+        self.setEmotion('neutral');
+      }
+      let r = Math.random();
+      if (r < 0.3){
+        self.leftRight();
+      } else {
+        self.blink();
+      }
+    }, waitTime);
+  }
+
+  blink(){
+    const self = this;
+    const blinkTime = Math.floor((Math.random() * 5000) + 1000);
+    setTimeout(function(){
+      if (self.state.currentEmotion !== 'yaas'){
+        self.setEmotion('blink');
+      }
+      self.neutral(200);
+    }, blinkTime)
+  }
+
+  leftRight(){
+    const self = this;
+    const blinkTime = Math.floor((Math.random() * 5000) + 1000);
+    setTimeout(function(){
+      if (self.state.currentEmotion !== 'yaas'){
+        const leftOrRight = Math.random();
+        if (leftOrRight < 0.5){
+          self.setEmotion('left');
+        } else {
+          self.setEmotion('right');
+        }
+      }
+      self.neutral(1000);
+    }, blinkTime);
+  }
+
+  setEmotion(emotion){
     this.setState({
       currentEmotion: emotion
-    }, callback);
+    });
   }
 
   render() {
     return (
       <div className="bitmoji" onMouseEnter={() => this.setEmotion('yaas')} onMouseLeave={() => this.setEmotion('neutral')}>
-        <img src={emotions[this.state.currentEmotion]} alt="Joy!" />
+        <img src={emotions[this.state.currentEmotion]} alt="Joybie!" />
       </div>
     )
   }

@@ -75,7 +75,8 @@
       opacity: 1;
       color: #ED184C; }
   .post .postStats {
-    opacity: 0.2; }
+    opacity: 0.2;
+    font-weight: bold; }
   .post .postStats:hover {
     opacity: 0.8; }
   .post .postIcon {
@@ -89,12 +90,12 @@
 
 @media (max-width: 600px) {
   .header .logo {
-    font-size: 2.6rem; }
+    font-size: 2.8rem; }
   .header .insta {
     height: 26%;
     display: none; }
 
-  .post img {
+  .post .postImage {
     margin-bottom: 5px; } }
 ::selection {
   background: #ED184C;

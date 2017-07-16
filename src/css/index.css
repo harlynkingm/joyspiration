@@ -81,7 +81,8 @@
   .header .logo {
     font-size: 2.8rem; }
   .header .insta {
-    height: 26%; }
+    height: 26%;
+    right: 10px; }
 
   .post img {
     margin-bottom: 5px; } }

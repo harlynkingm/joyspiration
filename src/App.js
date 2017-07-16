@@ -4,6 +4,7 @@ import './css/normalize.css';
 import './css/skeleton.css';
 import './css/index.css';
 import Header from './partials/Header';
+import Post from './partials/Post';
 
 class App extends Component {
   constructor(props){
@@ -33,31 +34,41 @@ class App extends Component {
   }
 
   loadedData(data){
-    console.log(data);
+    //console.log(data);
     const newData = data.items.map(p => {
         return {
           imageUrl: p.images.standard_resolution.url,
           caption: p.caption.text,
-          postTime: new Date(parseInt(p.created_time) * 1000)
+          postTime: parseInt(p.created_time, 10),
+          url: p.link
         }
       }
     );
     const tempPosts = this.state.posts.concat(newData);
-    console.log(tempPosts);
+    //console.log(tempPosts);
     this.setState({
       posts: tempPosts
     });
-    // if (data.more_available){
-    //   this.loadData(data.next);
-    // }
+    if (data.more_available){
+      this.loadData(data.next);
+    }
   }
 
   render() {
     return (
       <div className="background">
         <Header />
+        <div className="container">
+          {this.state.posts.map(this.renderPosts)}
+        </div>
       </div>
     );
+  }
+
+  renderPosts(post, index){
+    return (
+      <Post post={post} key={index} />
+    )
   }
 }
 

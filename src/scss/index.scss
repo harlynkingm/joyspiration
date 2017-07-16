@@ -1,8 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700');
 
+@font-face {
+    font-family: Futura;
+    src: url('../font/Futura-Bold.ttf');
+    font-weight: bold;
+}
+
 $header: 100px;
+$spacing: 50px;
 
 $joyspiration: #ED184C;
+$black: #292929;
+$grey: #CACACA;
 
 .background {
   background-image: url('../img/subtle_dots.png');
@@ -12,26 +21,113 @@ $joyspiration: #ED184C;
 .header {
   height: $header;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: white;
   line-height: $header;
   position: fixed;
   top: 0;
+  z-index: 100;
 
-  img {
+  .logo {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    color: $joyspiration;
+    letter-spacing: 3.18px;
+    margin: 0;
+    transition: letter-spacing 0.3s;
+  }
+
+  .logo:hover {
+    letter-spacing: 10px;
+  }
+
+  .insta {
+    position: absolute;
     height: 35%;
-    transition: height 0.6s;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.3;
+    transition: transform 0.5s;
+  }
+
+  .insta:hover {
+    opacity: 0.5;
+    transform: translateY(-50%) rotateZ(180deg);
+  }
+}
+
+.post {
+  margin-bottom: $spacing;
+  text-transform: uppercase;
+
+  img {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    width: 100%;
+    border-radius: 5px;
+    transition: border-radius 0.3s;
     cursor: pointer;
   }
 
   img:hover {
-    height: 40%;
+    border-radius: 50px;
+  }
+
+  .postCaption {
+    text-align: left;
+    white-space: pre-wrap;
+    letter-spacing: 1px;
+    color: $black;
+  }
+
+  .postTime {
+    text-transform: uppercase;
+    margin-bottom: 1px;
+    opacity: 0.2;
+  }
+
+  .hashtag {
+    text-transform: none;
+    font-size: 50%;
+    line-height: 160%;
+    margin-top: 5px;
+    margin-bottom: 0;
+
+    .hashtagLink {
+      opacity: 0.2;
+    }
+
+    .hashtagLink:hover {
+      opacity: 1;
+      color: $joyspiration;
+    }
   }
 }
 
 .container {
-  margin-top: $header + 50px;
+  padding-top: $header + $spacing/2;
+}
+
+@media(max-width: 600px){
+  .header {
+    .logo {
+      font-size: 2.8rem;
+    }
+
+    .insta {
+      height: 26%;
+    }
+  }
+  .post {
+    img {
+      margin-bottom: 5px;
+    }
+  }
+}
+
+::selection {
+  background: $joyspiration;
+  color: white;
 }

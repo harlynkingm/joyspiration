@@ -34,7 +34,7 @@ class App extends Component {
   }
 
   loadedData(data){
-    console.log(data);
+    //console.log(data);
     const newData = data.items.map(p => {
         return {
           imageUrl: p.images.standard_resolution.url,

@@ -22,12 +22,19 @@
     transform: translate(-50%, -50%);
     text-transform: uppercase;
     color: #ED184C;
-    letter-spacing: 3.18px;
     margin: 0;
+    font-weight: bold;
+    text-align: center; }
+  .header .mainlogo, .header .sublogo {
     transition: letter-spacing 0.3s;
-    font-weight: bold; }
-  .header .logo:hover {
+    letter-spacing: 3.18px; }
+  .header .logo:hover .mainlogo {
     letter-spacing: 10px; }
+  .header .logo:hover .sublogo {
+    letter-spacing: 5px; }
+  .header .sublogo {
+    font-size: 20%;
+    display: block; }
   .header .insta {
     position: absolute;
     height: 35%;
@@ -61,7 +68,7 @@
   .post .postTime {
     text-transform: uppercase;
     margin-bottom: 1px;
-    opacity: 0.2;
+    color: rgba(41, 41, 41, 0.2);
     font-weight: bold; }
   .post .hashtag {
     text-transform: none;
@@ -70,17 +77,18 @@
     margin-top: 5px;
     margin-bottom: 0; }
     .post .hashtag .hashtagLink {
-      opacity: 0.2; }
+      color: rgba(41, 41, 41, 0.2); }
     .post .hashtag .hashtagLink:hover {
-      opacity: 1;
       color: #ED184C; }
   .post .postStats {
-    opacity: 0.2;
-    font-weight: bold; }
+    color: rgba(41, 41, 41, 0.2);
+    font-weight: bold;
+    fill: currentColor; }
   .post .postStats:hover {
-    opacity: 0.8; }
+    color: #ED184C; }
   .post .postIcon {
     height: 13px;
+    width: 13px;
     padding-right: 3px; }
   .post .postIcon:last-child {
     padding-left: 10px; }

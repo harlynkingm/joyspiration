@@ -11,6 +11,7 @@ $spacing: 50px;
 
 $joyspiration: #ED184C;
 $black: #292929;
+$black-o: rgba(41, 41, 41, 0.2);
 $grey: #CACACA;
 
 .background {
@@ -34,14 +35,28 @@ $grey: #CACACA;
     transform: translate(-50%, -50%);
     text-transform: uppercase;
     color: $joyspiration;
-    letter-spacing: 3.18px;
     margin: 0;
-    transition: letter-spacing 0.3s;
     font-weight: bold;
+    text-align: center;
+  }
+
+  .mainlogo, .sublogo {
+    transition: letter-spacing 0.3s;
+    letter-spacing: 3.18px;
   }
 
   .logo:hover {
-    letter-spacing: 10px;
+    .mainlogo {
+      letter-spacing: 10px;
+    }
+    .sublogo {
+      letter-spacing: 5px;
+    }
+  }
+
+  .sublogo {
+    font-size: 20%;
+    display: block;
   }
 
   .insta {
@@ -88,7 +103,7 @@ $grey: #CACACA;
   .postTime {
     text-transform: uppercase;
     margin-bottom: 1px;
-    opacity: 0.2;
+    color: $black-o;
     font-weight: bold;
   }
 
@@ -100,25 +115,26 @@ $grey: #CACACA;
     margin-bottom: 0;
 
     .hashtagLink {
-      opacity: 0.2;
+      color: $black-o;
     }
 
     .hashtagLink:hover {
-      opacity: 1;
       color: $joyspiration;
     }
   }
 
   .postStats {
-    opacity: 0.2;
+    color: $black-o;
     font-weight: bold;
+    fill: currentColor;
   }
   .postStats:hover {
-    opacity: 0.8;
+    color: $joyspiration;
   }
 
   .postIcon {
     height: 13px;
+    width: 13px;
     padding-right: 3px;
   }
 

@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import Bitmoji from './Bitmoji';
 import insta from '../img/instagram.png';
 
 export default class Header extends Component {
   render() {
     return (
       <div className="header">
+        <Bitmoji />
         <a href="https://www.instagram.com/joyspirationblog/" target="_blank" rel="noopener noreferrer">
           <h2 className="logo">
             <span className="mainlogo">Joyspiration</span>

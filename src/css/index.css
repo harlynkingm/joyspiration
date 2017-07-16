@@ -46,6 +46,15 @@
   .header .insta:hover {
     opacity: 0.5;
     transform: translateY(-50%) rotateZ(180deg); }
+  .header .bitmoji {
+    position: absolute;
+    height: 80%;
+    left: 20px;
+    top: 47%;
+    transform: translateY(-50%);
+    cursor: pointer; }
+    .header .bitmoji img {
+      height: 100%; }
 
 .post {
   margin-bottom: 50px;

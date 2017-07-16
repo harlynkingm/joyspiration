@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700');
 
 @font-face {
-    font-family: Futura;
-    src: url('../font/Futura-Bold.ttf');
-    font-weight: bold;
+  font-family: Futura;
+  src: url('../font/Futura-Bold.ttf');
+  font-weight: bold;
 }
 
 $header: 100px;
@@ -37,6 +37,7 @@ $grey: #CACACA;
     letter-spacing: 3.18px;
     margin: 0;
     transition: letter-spacing 0.3s;
+    font-weight: bold;
   }
 
   .logo:hover {
@@ -80,12 +81,14 @@ $grey: #CACACA;
     white-space: pre-wrap;
     letter-spacing: 1px;
     color: $black;
+    font-weight: bold;
   }
 
   .postTime {
     text-transform: uppercase;
     margin-bottom: 1px;
     opacity: 0.2;
+    font-weight: bold;
   }
 
   .hashtag {

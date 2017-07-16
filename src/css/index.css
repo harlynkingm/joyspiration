@@ -24,7 +24,8 @@
     color: #ED184C;
     letter-spacing: 3.18px;
     margin: 0;
-    transition: letter-spacing 0.3s; }
+    transition: letter-spacing 0.3s;
+    font-weight: bold; }
   .header .logo:hover {
     letter-spacing: 10px; }
   .header .insta {
@@ -54,11 +55,13 @@
     text-align: left;
     white-space: pre-wrap;
     letter-spacing: 1px;
-    color: #292929; }
+    color: #292929;
+    font-weight: bold; }
   .post .postTime {
     text-transform: uppercase;
     margin-bottom: 1px;
-    opacity: 0.2; }
+    opacity: 0.2;
+    font-weight: bold; }
   .post .hashtag {
     text-transform: none;
     font-size: 50%;

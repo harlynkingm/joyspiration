@@ -64,7 +64,7 @@ $grey: #CACACA;
   margin-bottom: $spacing;
   text-transform: uppercase;
 
-  img {
+  .postImage {
     border: 1px solid rgba(0, 0, 0, 0.15);
     width: 100%;
     border-radius: 5px;
@@ -72,7 +72,7 @@ $grey: #CACACA;
     cursor: pointer;
   }
 
-  img:hover {
+  .postImage:hover {
     border-radius: 50px;
   }
 
@@ -82,6 +82,7 @@ $grey: #CACACA;
     letter-spacing: 1px;
     color: $black;
     font-weight: bold;
+    margin-bottom: 5px;
   }
 
   .postTime {
@@ -107,6 +108,22 @@ $grey: #CACACA;
       color: $joyspiration;
     }
   }
+
+  .postStats {
+    opacity: 0.2;
+  }
+  .postStats:hover {
+    opacity: 0.8;
+  }
+
+  .postIcon {
+    height: 13px;
+    padding-right: 3px;
+  }
+
+  .postIcon:last-child {
+    padding-left: 10px;
+  }
 }
 
 .container {
@@ -116,12 +133,12 @@ $grey: #CACACA;
 @media(max-width: 600px){
   .header {
     .logo {
-      font-size: 2.8rem;
+      font-size: 2.6rem;
     }
 
     .insta {
       height: 26%;
-      right: 10px;
+      display: none;
     }
   }
   .post {

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import moment from 'moment';
+import like from '../img/like.png';
+import comment from '../img/comment.png';
 
 export default class Post extends Component {
   hashtagHtml(caption){
@@ -26,7 +28,7 @@ export default class Post extends Component {
       <div className="post row">
         <div className="six columns">
           <a href={this.props.post.url} target="_blank" rel="noopener noreferrer">
-            <img src={newUrl} alt={this.props.post.caption} />
+            <img src={newUrl} alt={this.props.post.caption} className="postImage"/>
           </a>
         </div>
         <div className="six columns">
@@ -34,6 +36,14 @@ export default class Post extends Component {
           <h4 className="postCaption"
             dangerouslySetInnerHTML={this.hashtagHtml(this.props.post.caption)}>
           </h4>
+          <p>
+            <a href={this.props.post.url} target="_blank" rel="noopener noreferrer" className="postStats">
+            <img src={like} alt={this.props.post.likes + " Likes"} className="postIcon"/>
+            {this.props.post.likes}
+            <img src={comment} alt={this.props.post.comments + " Comments"} className="postIcon"/>
+            {this.props.post.comments}
+            </a>
+          </p>
         </div>
       </div>
     )

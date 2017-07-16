@@ -34,13 +34,15 @@ class App extends Component {
   }
 
   loadedData(data){
-    //console.log(data);
+    console.log(data);
     const newData = data.items.map(p => {
         return {
           imageUrl: p.images.standard_resolution.url,
           caption: p.caption.text,
           postTime: parseInt(p.created_time, 10),
-          url: p.link
+          url: p.link,
+          comments: p.comments.count,
+          likes: p.likes.count
         }
       }
     );

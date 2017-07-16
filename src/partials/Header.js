@@ -5,7 +5,7 @@ export default class Header extends Component {
   render() {
     return (
       <div className="header">
-        <a href="/">
+        <a href="https://www.instagram.com/joyspirationblog/" target="_blank" rel="noopener noreferrer">
           <h2 className="logo">Joyspiration</h2>
         </a>
         <a href="https://www.instagram.com/joyspirationblog/" target="_blank" rel="noopener noreferrer">

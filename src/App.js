@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import {BrowserRouter as Router} from 'react-router-dom';
 import $ from 'jquery';
 import './css/normalize.css';
 import './css/skeleton.css';
 import './css/index.css';
 import Header from './partials/Header';
-import Post from './partials/Post';
+import Routes from './partials/Routes';
 
 class App extends Component {
   constructor(props){
@@ -58,19 +59,15 @@ class App extends Component {
 
   render() {
     return (
-      <div className="background">
-        <Header />
-        <div className="container">
-          {this.state.posts.map(this.renderPosts)}
+      <Router>
+        <div className="background">
+          <Header />
+          <div className="container">
+            <Routes posts={this.state.posts} />
+          </div>
         </div>
-      </div>
+      </Router>
     );
-  }
-
-  renderPosts(post, index){
-    return (
-      <Post post={post} key={index} />
-    )
   }
 }
 

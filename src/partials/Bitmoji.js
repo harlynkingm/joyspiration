@@ -22,7 +22,7 @@ export default class Bitmoji extends Component {
   }
 
   componentDidMount(){
-    this.neutral();
+    this.neutral(100);
   }
 
   neutral(waitTime){

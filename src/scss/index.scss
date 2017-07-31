@@ -1,9 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700');
-
 @font-face {
   font-family: Futura;
   src: url('../font/Futura-Bold.ttf');
   font-weight: bold;
+}
+
+@font-face {
+  font-family: ProximaNova;
+  src: url('../font/ProximaNova-Reg.otf');
+  font-weight: normal;
 }
 
 $header: 100px;
@@ -47,10 +51,10 @@ $grey: #CACACA;
 
   .logo:hover {
     .mainlogo {
-      letter-spacing: 10px;
+      letter-spacing: 7px;
     }
     .sublogo {
-      letter-spacing: 5px;
+      letter-spacing: 4px;
     }
   }
 
@@ -80,7 +84,6 @@ $grey: #CACACA;
     left: 20px;
     top: 45%;
     transform: translateY(-50%);
-    cursor: pointer;
 
     img {
       height: 100%;
@@ -104,12 +107,15 @@ $grey: #CACACA;
     border-radius: 50px;
   }
 
-  .postCaption {
+  .postCaption, .postTitle {
     text-align: left;
     white-space: pre-wrap;
     letter-spacing: 1px;
     color: $black;
     font-weight: bold;
+  }
+
+  .postCaption {
     margin-bottom: 5px;
   }
 
@@ -118,6 +124,19 @@ $grey: #CACACA;
     margin-bottom: 1px;
     color: $black-o;
     font-weight: bold;
+  }
+
+  .postTitle {
+    margin-bottom: 10px;
+  }
+
+  .postContent {
+    font-family: 'ProximaNova';
+    text-transform: none;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    font-weight: 100;
+    font-size: 120%;
   }
 
   .hashtag {
@@ -153,6 +172,14 @@ $grey: #CACACA;
 
   .postIcon:last-child {
     padding-left: 10px;
+  }
+}
+
+.me {
+  img {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
   }
 }
 

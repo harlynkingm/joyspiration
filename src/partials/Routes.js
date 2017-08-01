@@ -11,7 +11,7 @@ export default class Routes extends Component {
     return (
       <Switch>
         <Route exact path="/" component={
-          () => (<Posts posts={this.props.posts}/>)
+          () => (<Posts posts={this.props.posts} next={this.props.next} loadMore={this.props.loadMore}/>)
         }/>
         <Route path="/me" component={
           () => (<Me />)

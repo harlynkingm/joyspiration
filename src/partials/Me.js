@@ -20,7 +20,7 @@ export default class Me extends Component {
     return (
       <div className="me row post">
         <div className="four columns">
-          <img src={me} />
+          <img src={me} alt="Joy"/>
         </div>
         <div className="eight columns">
           <h4 className="postTitle">About Me</h4>

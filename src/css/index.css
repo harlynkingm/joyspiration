@@ -99,7 +99,7 @@
     letter-spacing: 1px;
     color: #292929;
     font-weight: bold;
-    font-size: 2.4rem; }
+    font-size: 2.1rem; }
   .post .postCaption {
     margin-bottom: 5px; }
   .post .postTime {
@@ -108,7 +108,7 @@
     color: rgba(41, 41, 41, 0.2);
     font-weight: bold;
     text-align: left;
-    font-size: 2rem; }
+    font-size: 1.7rem; }
   .post .postTitle {
     margin-bottom: 10px;
     font-size: 3rem; }
@@ -137,8 +137,7 @@
       border-radius: 5px; }
       .post .postContent figure img {
         width: 100%;
-        display: inline-block;
-        vertical-align: middle; }
+        display: inline-block; }
     .post .postContent figure:before {
       content: "";
       display: inline-block;

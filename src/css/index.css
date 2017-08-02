@@ -53,7 +53,7 @@
     position: absolute; }
   .header .blog, .header .insta {
     position: absolute;
-    height: 50%;
+    height: 45%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); }
@@ -62,15 +62,16 @@
   .header .blog:hover {
     transform: translate(-50%, -50%) rotateZ(15deg); }
   .header .insta {
-    height: 42%;
+    height: 38%;
     opacity: 0.7; }
   .header .insta:hover {
-    height: 45%; }
+    height: 42%; }
   .header .bitmoji {
     position: absolute;
-    height: 80%;
+    height: 70%;
     top: 45%;
-    transform: translateY(-50%); }
+    left: 55%;
+    transform: translate(-50%, -50%); }
     .header .bitmoji img {
       height: 100%; }
   .header .subtitle {
@@ -80,7 +81,7 @@
     font-size: 60%;
     opacity: 0.6;
     display: block;
-    transform: translateY(-8px); }
+    transform: translateY(-10px); }
 
 .post {
   margin-bottom: 40px;
@@ -186,9 +187,10 @@
 @media (max-width: 800px) {
   .header .logo {
     font-size: 2rem; }
+  .header .mainlogo {
+    letter-spacing: 2px; }
   .header .bitmoji {
-    height: 60%;
-    left: 10px; }
+    height: 60%; }
   .header .sublogo {
     display: none; }
   .header .blog {
@@ -205,7 +207,7 @@
     width: 60px; }
   .header .header-icon:last-child {
     position: absolute;
-    right: 0; }
+    right: 5px; }
   .header .subtitle {
     transform: translateY(-12px); }
 

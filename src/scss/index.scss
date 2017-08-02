@@ -94,7 +94,7 @@ $border: 1px solid rgba(0, 0, 0, 0.15);
 
   .blog, .insta{
     position: absolute;
-    height: 50%;
+    height: 45%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -108,19 +108,20 @@ $border: 1px solid rgba(0, 0, 0, 0.15);
   }
 
   .insta {
-    height: 42%;
+    height: 38%;
     opacity: 0.7;
   }
 
   .insta:hover {
-    height: 45%;
+    height: 42%;
   }
 
   .bitmoji {
     position: absolute;
-    height: 80%;
+    height: 70%;
     top: 45%;
-    transform: translateY(-50%);
+    left: 55%;
+    transform: translate(-50%, -50%);
 
     img {
       height: 100%;
@@ -134,7 +135,7 @@ $border: 1px solid rgba(0, 0, 0, 0.15);
     font-size: 60%;
     opacity: 0.6;
     display: block;
-    transform: translateY(-8px);
+    transform: translateY(-10px);
   }
 
 }
@@ -294,9 +295,12 @@ $border: 1px solid rgba(0, 0, 0, 0.15);
       font-size: 2rem;
     }
 
+    .mainlogo {
+      letter-spacing: 2px;
+    }
+
     .bitmoji {
       height: 60%;
-      left: 10px;
     }
 
     .sublogo {
@@ -329,7 +333,7 @@ $border: 1px solid rgba(0, 0, 0, 0.15);
 
     .header-icon:last-child {
       position: absolute;
-      right: 0;
+      right: 5px;
     }
 
     .subtitle {

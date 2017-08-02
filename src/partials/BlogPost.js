@@ -14,14 +14,21 @@ export default class BlogPost extends Component {
 
   setHeights(){
     $("figure").next("figure").each(function() {
-      //console.log($(this).prev().find("img").height());
-      //console.log($(this).find("img").height());
-      let height1 = $(this).prev().find("img").height();
-      let height2 = $(this).find("img").height();
+      let figure1 = $(this).prev();
+      let figure2 = $(this);
+      // Make heights the same
+      let height1 = figure1.find("img").height();
+      let height2 = figure2.find("img").height();
       let minHeight = Math.min(height1, height2);
-      $(this).prev().height(minHeight);
-      $(this).height(minHeight);
+      figure1.height(minHeight);
+      figure2.height(minHeight);
+      // Add links
+      let link1 = figure2.next("p").find("a").attr("href");
+      let link2 = figure2.next("p").find("a").next("a").attr("href");
+      figure1.find("img").wrap("<a href='" + link1 + "' target='_blank'></a>");
+      figure2.find("img").wrap("<a href='" + link2 + "' target='_blank'></a>");
     });
+    $(".post a").attr('target','_blank');
   }
 
   render() {

@@ -4,6 +4,7 @@ import $ from 'jquery';
 import './css/normalize.css';
 import './css/skeleton.css';
 import './css/index.css';
+import ScrollToTop from './partials/ScrollToTop';
 import Header from './partials/Header';
 import Routes from './partials/Routes';
 
@@ -109,12 +110,14 @@ class App extends Component {
   render() {
     return (
       <Router>
+        <ScrollToTop>
         <div className="background">
           <Header />
           <div className="container">
             <Routes posts={this.state.posts} next={this.state.next} loadMoreInsta={this.loadMoreInsta} loadMoreBlog={this.loadMoreBlog} />
           </div>
         </div>
+        </ScrollToTop>
       </Router>
     );
   }

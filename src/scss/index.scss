@@ -7,7 +7,13 @@
 @font-face {
   font-family: ProximaNova;
   src: url('../font/ProximaNova-Reg.otf');
-  font-weight: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: ProximaNova;
+  src: url('../font/ProximaNova-Light.otf');
+  font-weight: 200;
 }
 
 $header: 100px;
@@ -46,44 +52,73 @@ $border: 1px solid rgba(0, 0, 0, 0.15);
     text-align: center;
   }
 
-  .mainlogo, .sublogo {
-    transition: letter-spacing 0.3s;
-    letter-spacing: 3.18px;
+  .mainlogo {
+    letter-spacing: 4px;
   }
 
-  .logo:hover {
-    .mainlogo {
-      letter-spacing: 7px;
-    }
-    .sublogo {
-      letter-spacing: 4px;
-    }
-  }
+  // .logo:hover {
+  //   .mainlogo {
+  //     letter-spacing: 7px;
+  //   }
+  //   .sublogo {
+  //     letter-spacing: 4px;
+  //   }
+  // }
 
   .sublogo {
     font-size: 20%;
     display: block;
+    letter-spacing: 3.3px;
+  }
+
+  .header-left {
+    .header-icon:first-child {
+      padding-left: 10px;
+    }
+  }
+
+  .header-icon {
+    display: inline-block;
+    height: 100%;
+    width: 80px;
+    position: relative;
+    text-align: center;
+  }
+
+  .header-right{
+    display: inline-block;
+    top: 0;
+    right: 0px;
+    position: absolute;
+  }
+
+  .blog, .insta{
+    position: absolute;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    img {
+      height: 100%;
+    }
+  }
+
+  .blog:hover {
+    transform: translate(-50%, -50%) rotateZ(15deg);
   }
 
   .insta {
-    position: absolute;
-    height: 35%;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0.3;
-    transition: transform 0.5s;
+    height: 42%;
+    opacity: 0.7;
   }
 
   .insta:hover {
-    opacity: 0.5;
-    transform: translateY(-50%) rotateZ(180deg);
+    height: 45%;
   }
 
   .bitmoji {
     position: absolute;
     height: 80%;
-    left: 20px;
     top: 45%;
     transform: translateY(-50%);
 
@@ -91,6 +126,17 @@ $border: 1px solid rgba(0, 0, 0, 0.15);
       height: 100%;
     }
   }
+
+  .subtitle {
+    margin: 0;
+    line-height: 0;
+    text-transform: uppercase;
+    font-size: 60%;
+    opacity: 0.6;
+    display: block;
+    transform: translateY(-8px);
+  }
+
 }
 
 .post {
@@ -101,15 +147,14 @@ $border: 1px solid rgba(0, 0, 0, 0.15);
 
   .postImage {
     border: $border;
-    width: 100%;
+    max-width: 100%;
     border-radius: 5px;
-    transition: border-radius 0.3s;
     cursor: pointer;
   }
 
-  .postImage:hover {
-    border-radius: 50px;
-  }
+  // .postImage:hover {
+  //   border-radius: 50px;
+  // }
 
   .postCaption, .postTitle {
     text-align: left;
@@ -117,6 +162,7 @@ $border: 1px solid rgba(0, 0, 0, 0.15);
     letter-spacing: 1px;
     color: $black;
     font-weight: bold;
+    font-size: 2.4rem;
   }
 
   .postCaption {
@@ -128,10 +174,13 @@ $border: 1px solid rgba(0, 0, 0, 0.15);
     margin-bottom: 1px;
     color: $black-o;
     font-weight: bold;
+    text-align: left;
+    font-size: 2rem;
   }
 
   .postTitle {
     margin-bottom: 10px;
+    font-size: 3rem;
   }
 
   .postContent {
@@ -143,10 +192,14 @@ $border: 1px solid rgba(0, 0, 0, 0.15);
     font-size: 120%;
 
     h2 {
-      font-family: 'Futura';
       font-weight: bold;
       font-size: 2.5rem;
       margin-bottom: 10px;
+      letter-spacing: 0.5px;
+      padding-bottom: 5px;
+      border-bottom: $border;
+      width: 75%;
+      font-weight: 400;
     }
 
     figure {
@@ -235,7 +288,7 @@ $border: 1px solid rgba(0, 0, 0, 0.15);
   margin-bottom: $spacing;
 }
 
-@media(max-width: 600px){
+@media(max-width: 800px){
   .header {
     .logo {
       font-size: 2rem;
@@ -250,8 +303,37 @@ $border: 1px solid rgba(0, 0, 0, 0.15);
       display: none;
     }
 
-    .insta {
-      height: 30%;
+    .blog {
+      height: 35%;
+    }
+
+    .subtitle {
+      bottom: 14px;
+    }
+
+    .subtitle.left {
+      left: 15px;
+    }
+
+    .subtitle.right {
+      right: 24px;
+    }
+
+    .header-right {
+      display: none;
+    }
+
+    .header-icon {
+      width: 60px;
+    }
+
+    .header-icon:last-child {
+      position: absolute;
+      right: 0;
+    }
+
+    .subtitle {
+      transform: translateY(-12px);
     }
   }
   .post {
@@ -259,7 +341,10 @@ $border: 1px solid rgba(0, 0, 0, 0.15);
       margin-bottom: 5px;
     }
 
-    figure {
+    .postContent {
+      h2 {
+        width: 100%;
+      }
     }
   }
 }
@@ -267,4 +352,17 @@ $border: 1px solid rgba(0, 0, 0, 0.15);
 ::selection {
   background: $joyspiration;
   color: white;
+}
+
+.unselectable {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+
+.center {
+  text-align: center;
 }

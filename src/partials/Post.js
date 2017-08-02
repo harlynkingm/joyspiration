@@ -46,9 +46,11 @@ export default class Post extends Component {
     let time = moment.unix(this.props.post.postTime).format("dddd, MMMM Do");
     return (
       <div className="post row">
+          <div className="center">
           <a href={this.props.post.url} target="_blank" rel="noopener noreferrer">
             <img src={newUrl} alt={this.props.post.caption} className="postImage"/>
           </a>
+          </div>
           <h5 className="postTime">{time}</h5>
           <h4 className="postCaption"
             dangerouslySetInnerHTML={this.hashtagHtml(this.props.post.caption)} />

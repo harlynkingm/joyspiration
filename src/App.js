@@ -19,7 +19,8 @@ class App extends Component {
     this.loadData = this.loadData.bind(this);
     this.loadedInstagramData = this.loadedInstagramData.bind(this);
     this.loadedTumblrData = this.loadedTumblrData.bind(this);
-    this.loadMore = this.loadMore.bind(this);
+    this.loadMoreInsta = this.loadMoreInsta.bind(this);
+    this.loadMoreBlog = this.loadMoreBlog.bind(this);
   }
 
   componentDidMount(){
@@ -93,10 +94,13 @@ class App extends Component {
     return tempData.sort((a, b) => {return b.postTime - a.postTime});
   }
 
-  loadMore(){
+  loadMoreInsta(){
     if (this.state.next){
       this.loadData(this.state.next, this.loadedInstagramData);
     }
+  }
+
+  loadMoreBlog(){
     if (this.state.loadedBlogs < this.state.totalBlogs){
       this.loadData('https://api.tumblr.com/v2/blog/joyspirationblog.tumblr.com/posts/text?api_key=TTkKheqvTNVfywJhbHvzXFeWzeZ9aiGCfcaa3h9rdCLoBFenGd&offset=' + this.state.loadedBlogs, this.loadedTumblrData);
     }
@@ -108,7 +112,7 @@ class App extends Component {
         <div className="background">
           <Header />
           <div className="container">
-            <Routes posts={this.state.posts} next={this.state.next} loadMore={this.loadMore} />
+            <Routes posts={this.state.posts} next={this.state.next} loadMoreInsta={this.loadMoreInsta} loadMoreBlog={this.loadMoreBlog} />
           </div>
         </div>
       </Router>

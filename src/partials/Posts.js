@@ -5,6 +5,11 @@ import BlogPost from './BlogPost';
 import hearts from '../img/hearts.svg';
 
 export default class Posts extends Component {
+  constructor(props){
+    super(props);
+    this.loadMore = this.loadMore.bind(this);
+  }
+  
   renderPosts(post, index){
     if (post.type === 'insta'){
       return (
@@ -19,12 +24,21 @@ export default class Posts extends Component {
     }
   }
 
+  loadMore() {
+    if (this.props.loadBoth){
+      this.props.loadMoreInsta();
+      this.props.loadMoreBlog();
+    } else {
+      this.props.loadMoreBlog();
+    }
+  }
+
   render() {
     return (
       <div className="posts">
         {this.props.posts.map(this.renderPosts)}
         { this.props.next.length > 0 &&
-          <Waypoint onEnter={this.props.loadMore}>
+          <Waypoint onEnter={this.loadMore}>
             <div className="loading">
               <img src={hearts} alt="Loading..."/>
             </div>

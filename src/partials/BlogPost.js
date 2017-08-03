@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import moment from 'moment';
+import ReactDisqusThread from 'react-disqus-thread';
 
 export default class BlogPost extends Component {
 
@@ -14,6 +15,9 @@ export default class BlogPost extends Component {
         </h4>
         <div className="postContent"
           dangerouslySetInnerHTML={{__html:this.props.post.content}} />
+        { !this.props.simple &&
+          <ReactDisqusThread shortname="joyspirationblog" identifier={this.props.post.route} url={window.location.href}/>
+        }
       </div>
     )
   }

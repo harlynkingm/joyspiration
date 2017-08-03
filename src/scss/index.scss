@@ -203,13 +203,17 @@ $border: 1px solid rgba(0, 0, 0, 0.15);
       font-weight: 400;
     }
 
+    p {
+      margin-bottom: 20px;
+    }
+
     figure {
       display: inline-block;
       margin: 0;
       width: 50%;
-      height: 0px;
       overflow: hidden;
       border-radius: 5px;
+      line-height: normal;
 
       img {
         width: 100%;

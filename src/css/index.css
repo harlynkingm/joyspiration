@@ -128,13 +128,15 @@
       border-bottom: 1px solid rgba(0, 0, 0, 0.15);
       width: 75%;
       font-weight: 400; }
+    .post .postContent p {
+      margin-bottom: 20px; }
     .post .postContent figure {
       display: inline-block;
       margin: 0;
       width: 50%;
-      height: 0px;
       overflow: hidden;
-      border-radius: 5px; }
+      border-radius: 5px;
+      line-height: normal; }
       .post .postContent figure img {
         width: 100%;
         display: inline-block; }

@@ -24,9 +24,62 @@ class App extends Component {
     this.loadMoreBlog = this.loadMoreBlog.bind(this);
   }
 
+  setHeights(){
+    $("figure").each(function() {
+      if (!$(this).next().is("figure") && !$(this).prev().is("figure")){
+        $(this).width('100%');
+        if (!$(this).find("img").parent().is("a")){
+          let link = $(this).next("p").find("a").attr("href");
+          $(this).find("img").wrap("<a href='" + link + "' target='_blank'></a>");
+        }
+      }
+    });
+    $("figure").next("figure").each(function() {
+      let figure1 = $(this).prev();
+      let figure2 = $(this);
+      // Make heights the same
+      let height1 = figure1.find("img").height();
+      let height2 = figure2.find("img").height();
+      // console.log(height1 + " " + height2);
+      let minHeight = Math.min(height1, height2);
+      figure1.height(minHeight);
+      figure2.height(minHeight);
+      figure1.width('50%');
+      figure2.width('50%');
+      // Add links
+      if (!figure1.find("img").parent().is("a")){
+        let link1 = figure2.next("p").find("a").attr("href");
+        let link2 = figure2.next("p").find("a").next("a").attr("href");
+        figure1.find("img").wrap("<a href='" + link1 + "' target='_blank'></a>");
+        figure2.find("img").wrap("<a href='" + link2 + "' target='_blank'></a>");
+      }
+    });
+    $('a').each(function() {
+       var a = new RegExp('/' + window.location.host + '/');
+       if (!a.test(this.href)) {
+          $(this).attr("target","_blank");
+       }
+    });
+    //console.log("set heights");
+  }
+
+  componentWillReceiveProps(){
+    this.setHeights();
+  }
+
   componentDidMount(){
     this.loadData('https://igpi.ga/joyspirationblog/media/', this.loadedInstagramData);
     this.loadData('https://api.tumblr.com/v2/blog/joyspirationblog.tumblr.com/posts/text?api_key=TTkKheqvTNVfywJhbHvzXFeWzeZ9aiGCfcaa3h9rdCLoBFenGd', this.loadedTumblrData);
+    this.setHeights();
+    window.addEventListener("resize", this.setHeights);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.setHeights);
+  }
+
+  componentDidUpdate() {
+    this.setHeights();
   }
 
   loadData(url, success){
@@ -65,7 +118,7 @@ class App extends Component {
     this.setState({
       posts: tempPosts,
       next: more
-    });
+    }, this.setHeights);
   }
 
   loadedTumblrData(data){
@@ -87,7 +140,7 @@ class App extends Component {
       posts: tempPosts,
       totalBlogs: totalBlogs,
       loadedBlogs: tempCount
-    });
+    }, this.setHeights);
   }
 
   addData(oldData, newData){

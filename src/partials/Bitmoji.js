@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import $ from 'jquery';
 import neutral from '../img/bitmoji/neutral.png';
 import blink from '../img/bitmoji/blink.png';
 import left from '../img/bitmoji/look_left.png';
@@ -16,9 +17,7 @@ const emotions = {
 export default class Bitmoji extends Component {
   constructor(props){
     super(props);
-    this.state = {
-      currentEmotion: 'neutral'
-    }
+    this.currentEmotion = 'neutral';
   }
 
   componentDidMount(){
@@ -28,7 +27,7 @@ export default class Bitmoji extends Component {
   neutral(waitTime){
     const self = this;
     setTimeout(function(){
-      if (self.state.currentEmotion !== 'yaas'){
+      if (self.currentEmotion !== 'yaas'){
         self.setEmotion('neutral');
       }
       let r = Math.random();
@@ -44,7 +43,7 @@ export default class Bitmoji extends Component {
     const self = this;
     const blinkTime = Math.floor((Math.random() * 5000) + 1000);
     setTimeout(function(){
-      if (self.state.currentEmotion !== 'yaas'){
+      if (self.currentEmotion !== 'yaas'){
         self.setEmotion('blink');
       }
       self.neutral(200);
@@ -55,7 +54,7 @@ export default class Bitmoji extends Component {
     const self = this;
     const blinkTime = Math.floor((Math.random() * 5000) + 1000);
     setTimeout(function(){
-      if (self.state.currentEmotion !== 'yaas'){
+      if (self.currentEmotion !== 'yaas'){
         const leftOrRight = Math.random();
         if (leftOrRight < 0.5){
           self.setEmotion('left');
@@ -68,15 +67,24 @@ export default class Bitmoji extends Component {
   }
 
   setEmotion(emotion){
-    this.setState({
-      currentEmotion: emotion
-    });
+    // this.setState({
+    //   currentEmotion: emotion
+    // });
+    this.currentEmotion = emotion;
+    $(".bitmojiFace").hide();
+    $("." + this.currentEmotion).show();
   }
 
   render() {
+    var emotionFaces = [];
+    for (var property in emotions) {
+      if (emotions.hasOwnProperty(property)) {
+        emotionFaces.push(<img src={emotions[property]} className={"bitmojiFace "+ property} alt="Joybie!" />);
+      }
+    }
     return (
       <div className="bitmoji" onMouseEnter={() => this.setEmotion('yaas')} onMouseLeave={() => this.setEmotion('neutral')}>
-        <img src={emotions[this.state.currentEmotion]} alt="Joybie!" />
+        {emotionFaces}
       </div>
     )
   }

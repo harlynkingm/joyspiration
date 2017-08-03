@@ -9,7 +9,7 @@ export default class Posts extends Component {
     super(props);
     this.loadMore = this.loadMore.bind(this);
   }
-  
+
   renderPosts(post, index){
     if (post.type === 'insta'){
       return (
@@ -37,7 +37,7 @@ export default class Posts extends Component {
     return (
       <div className="posts">
         {this.props.posts.map(this.renderPosts)}
-        { this.props.next.length > 0 &&
+        { this.props.next.length > 0 && this.props.loadBoth &&
           <Waypoint onEnter={this.loadMore}>
             <div className="loading">
               <img src={hearts} alt="Loading..."/>

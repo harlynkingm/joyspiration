@@ -77,10 +77,12 @@ export default class Bitmoji extends Component {
 
   render() {
     var emotionFaces = [];
+    var i = 0;
     for (var property in emotions) {
       if (emotions.hasOwnProperty(property)) {
-        emotionFaces.push(<img src={emotions[property]} className={"bitmojiFace "+ property} alt="Joybie!" />);
+        emotionFaces.push(<img src={emotions[property]} className={"bitmojiFace "+ property} alt="Joybie!" key={i}/>);
       }
+      i += 1;
     }
     return (
       <div className="bitmoji" onMouseEnter={() => this.setEmotion('yaas')} onMouseLeave={() => this.setEmotion('neutral')}>

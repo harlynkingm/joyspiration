@@ -68,7 +68,7 @@ class App extends Component {
   }
 
   componentDidMount(){
-    this.loadData('https://igpi.ga/joyspirationblog/media/', this.loadedInstagramData);
+    this.loadData('https://igpi.ga/joyspirationblog/media/?count=10', this.loadedInstagramData);
     this.loadData('https://api.tumblr.com/v2/blog/joyspirationblog.tumblr.com/posts/text?api_key=TTkKheqvTNVfywJhbHvzXFeWzeZ9aiGCfcaa3h9rdCLoBFenGd', this.loadedTumblrData);
     this.setHeights();
     window.addEventListener("resize", this.setHeights);

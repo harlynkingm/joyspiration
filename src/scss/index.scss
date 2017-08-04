@@ -90,9 +90,13 @@ $border: 1px solid rgba(0, 0, 0, 0.15);
     top: 0;
     right: 0px;
     position: absolute;
+
+    .header-icon:first-child {
+      width: 50px;
+    }
   }
 
-  .blog, .insta{
+  .blog, .insta, .share{
     position: absolute;
     height: 45%;
     top: 50%;
@@ -107,12 +111,12 @@ $border: 1px solid rgba(0, 0, 0, 0.15);
     transform: translate(-50%, -50%) rotateZ(15deg);
   }
 
-  .insta {
+  .insta, .share {
     height: 38%;
     opacity: 0.7;
   }
 
-  .insta:hover {
+  .insta:hover, .share:hover {
     height: 42%;
   }
 

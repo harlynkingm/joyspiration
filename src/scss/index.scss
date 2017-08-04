@@ -75,6 +75,10 @@ $border: 1px solid rgba(0, 0, 0, 0.15);
     .header-icon:first-child {
       padding-left: 10px;
     }
+
+    .header-icon:last-child {
+      width: 70px;
+    }
   }
 
   .header-icon {
@@ -306,11 +310,57 @@ $border: 1px solid rgba(0, 0, 0, 0.15);
 
 @media(max-width: 800px){
   .header {
-    .logo {
-      font-size: 2rem;
+    .sublogo {
+      display: none;
     }
 
     .mainlogo {
+      font-size: 3rem;
+    }
+
+    .subtitle {
+      transform: translateY(-13px);
+    }
+
+    .bitmoji {
+      height: 60%;
+    }
+
+    .blog {
+      height: 40%;
+    }
+
+    .insta, .share {
+      height: 34%;
+    }
+
+    .insta:hover, .share:hover {
+      height: 38%;
+    }
+
+    .header-icon {
+      width: 70px;
+    }
+
+    .header-left .header-icon:last-child {
+      width: 50px;
+    }
+
+    .header-right .header-icon:first-child {
+      width: 50px;
+    }
+
+    .header-right .header-icon:last-child {
+      width: 60px;
+    }
+  }
+}
+
+@media(max-width: 600px){
+  .header {
+
+    .mainlogo {
+      font-size: 2rem;
       letter-spacing: 2px;
     }
 

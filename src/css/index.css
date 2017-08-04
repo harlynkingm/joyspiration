@@ -40,6 +40,8 @@
     letter-spacing: 3.3px; }
   .header .header-left .header-icon:first-child {
     padding-left: 10px; }
+  .header .header-left .header-icon:last-child {
+    width: 70px; }
   .header .header-icon {
     display: inline-block;
     height: 100%;
@@ -192,9 +194,31 @@
   margin-bottom: 50px; }
 
 @media (max-width: 800px) {
-  .header .logo {
-    font-size: 2rem; }
+  .header .sublogo {
+    display: none; }
   .header .mainlogo {
+    font-size: 3rem; }
+  .header .subtitle {
+    transform: translateY(-13px); }
+  .header .bitmoji {
+    height: 60%; }
+  .header .blog {
+    height: 40%; }
+  .header .insta, .header .share {
+    height: 34%; }
+  .header .insta:hover, .header .share:hover {
+    height: 38%; }
+  .header .header-icon {
+    width: 70px; }
+  .header .header-left .header-icon:last-child {
+    width: 50px; }
+  .header .header-right .header-icon:first-child {
+    width: 50px; }
+  .header .header-right .header-icon:last-child {
+    width: 60px; } }
+@media (max-width: 600px) {
+  .header .mainlogo {
+    font-size: 2rem;
     letter-spacing: 2px; }
   .header .bitmoji {
     height: 60%; }

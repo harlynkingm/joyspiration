@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router} from 'react-router-dom';
+import imagesLoaded from 'imagesloaded';
 import $ from 'jquery';
 import './css/normalize.css';
 import './css/skeleton.css';
@@ -42,8 +43,10 @@ class App extends Component {
       let height2 = figure2.find("img").height();
       // console.log(height1 + " " + height2);
       let minHeight = Math.min(height1, height2);
-      figure1.height(minHeight);
-      figure2.height(minHeight);
+      if (minHeight !== 0){
+        figure1.height(minHeight);
+        figure2.height(minHeight);
+      }
       figure1.width('50%');
       figure2.width('50%');
       // Add links
@@ -71,7 +74,12 @@ class App extends Component {
     this.loadData('https://igpi.ga/joyspirationblog/media/?count=10', this.loadedInstagramData);
     this.loadData('https://api.tumblr.com/v2/blog/joyspirationblog.tumblr.com/posts/text?api_key=TTkKheqvTNVfywJhbHvzXFeWzeZ9aiGCfcaa3h9rdCLoBFenGd', this.loadedTumblrData);
     this.setHeights();
+    let p = this;
     window.addEventListener("resize", this.setHeights);
+    imagesLoaded.makeJQueryPlugin( $ );
+    $(".post").imagesLoaded().always(function(instance){
+      p.setHeights();
+    });
   }
 
   componentWillUnmount() {

@@ -5,6 +5,11 @@ import share from '../img/share.png';
 import blog from '../img/blog.png';
 
 export default class Header extends Component {
+  openShare() {
+    window.open('https://www.facebook.com/sharer/sharer.php?u=http%3A//joyspirationblog.com/','facebook-share-dialog','width=626,height=436');
+    return false;
+  }
+
   render() {
     return (
       <div className="header">
@@ -35,7 +40,7 @@ export default class Header extends Component {
         <div className="header-right">
           <div className="header-icon">
             &nbsp;
-            <a href="#" onClick={function(){ window.open('https://www.facebook.com/sharer/sharer.php?u=http%3A//joyspirationblog.com/','facebook-share-dialog','width=626,height=436');return false;}} href="javascript:void(0)">
+            <a onClick={this.openShare} href="#">
               <img src={share} alt="Share on Facebook" className="share"/>
             </a>
             <span className="subtitle unselectable">Share</span>

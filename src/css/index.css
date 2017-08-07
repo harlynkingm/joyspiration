@@ -187,6 +187,15 @@
   border-radius: 5px;
   margin-bottom: 10px; }
 
+.share {
+  margin-bottom: 20px; }
+  .share .shareTitle {
+    margin-bottom: 5px; }
+  .share .shareButton {
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer; }
+
 .container {
   padding-top: 125px; }
 
